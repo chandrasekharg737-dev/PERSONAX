@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personax | Where Personality Meets the Skin</title>
+    <meta name="description"
+        content="Personax is an AI-powered personality and skincare assistant that analyzes your personality and skin type to provide personalized skincare recommendations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="gradient-background"></div>
+    <div id="floating-shapes"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <main id="app">
+        <!-- Home Page Section -->
+        <section id="home-section" class="active">
+            <div class="container hero-content">
+                <h1 class="animated-title">PERSONAX</h1>
+                <p class="tagline">Where Personality Meets the Skin</p>
+                <p class="description">
+                    Personax is an AI-powered personality and skincare assistant that analyzes your personality and skin
+                    type to provide personalized skincare recommendations.
+                </p>
+                <button id="start-btn" class="glowing-btn">Start Your Skin Journey</button>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-section">
+            <div class="container">
+                <div id="quiz-container" class="glass-card">
+                    <div class="quiz-header">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span id="step-count">Step 1 of 6</span>
+                    </div>
+
+                    <div id="quiz-step-content">
+                        <!-- Content will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section">
+            <div class="container">
+                <div class="glass-card result-card">
+                    <h2 class="result-title">Your Personal Skin Persona</h2>
+                    <div id="result-content">
+                        <!-- Results will be dynamically inserted here -->
+                    </div>
+                    <button id="restart-btn" class="secondary-btn">New Skin Journey</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
