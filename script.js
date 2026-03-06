@@ -1,69 +1,192 @@
 const quizData = {
     steps: [
         {
-            title: "Select Your Gender",
-            field: "gender",
-            options: [
-                { id: "male", label: "Male", icon: "👨" },
-                { id: "female", label: "Female", icon: "👩" },
-                { id: "other", label: "Prefer not to say", icon: "✨" }
+            title: "Basic Details",
+            field: "basic",
+            type: "multi-input",
+            inputs: [
+                {
+                    label: "Select Your Gender",
+                    field: "gender",
+                    options: [
+                        { id: "male", label: "Male", icon: "👨" },
+                        { id: "female", label: "Female", icon: "👩" },
+                        { id: "other", label: "Other", icon: "✨" }
+                    ]
+                },
+                {
+                    label: "Age Category",
+                    field: "age",
+                    options: [
+                        { id: "teen", label: "13–17 (Teen)", icon: "🎒" },
+                        { id: "young", label: "18–25 (Young Adult)", icon: "🎓" },
+                        { id: "adult", label: "26–35 (Adult)", icon: "💼" },
+                        { id: "mature", label: "36–50 (Mature)", icon: "👔" },
+                        { id: "senior", label: "50+", icon: "👴" }
+                    ]
+                }
             ]
         },
         {
-            title: "Describe Your Personality",
-            field: "personality",
+            title: "Body Type",
+            field: "bodyType",
+            dependsOn: "gender",
+            options: {
+                female: [
+                    { id: "hourglass", label: "Hourglass", icon: "⏳" },
+                    { id: "pear", label: "Pear", icon: "🍐" },
+                    { id: "apple", label: "Apple", icon: "🍎" },
+                    { id: "rectangle", label: "Rectangle", icon: "📏" },
+                    { id: "inverted_triangle", label: "Inverted Triangle", icon: "🔻" }
+                ],
+                male: [
+                    { id: "ectomorph", label: "Ectomorph", icon: "🏃" },
+                    { id: "mesomorph", label: "Mesomorph", icon: "💪" },
+                    { id: "endomorph", label: "Endomorph", icon: "🏋️" },
+                    { id: "athletic", label: "Athletic", icon: "🏅" }
+                ],
+                other: [
+                    { id: "average", label: "Average", icon: "👤" },
+                    { id: "slim", label: "Slim", icon: "🦯" },
+                    { id: "athletic", label: "Athletic", icon: "💪" },
+                    { id: "curvy", label: "Curvy", icon: "🌊" }
+                ]
+            }
+        },
+        {
+            title: "Style Preferences",
+            field: "style",
+            type: "multi-select",
             options: [
-                { id: "calm", label: "Calm & Balanced", icon: "🧘" },
-                { id: "bold", label: "Bold & Confident", icon: "🦁" },
-                { id: "natural", label: "Natural & Minimal", icon: "🌿" },
-                { id: "mysterious", label: "Deep & Mysterious", icon: "🌙" },
-                { id: "energetic", label: "Energetic & Social", icon: "⚡" }
+                { id: "casual", label: "Casual", icon: "👕" },
+                { id: "formal", label: "Formal", icon: "👔" },
+                { id: "streetwear", label: "Streetwear", icon: "🛹" },
+                { id: "minimalist", label: "Minimalist", icon: "⚪" },
+                { id: "traditional", label: "Traditional", icon: "🕌" },
+                { id: "sporty", label: "Sporty", icon: "👟" },
+                { id: "elegant", label: "Elegant", icon: "💎" },
+                { id: "aesthetic", label: "Aesthetic", icon: "✨" }
+            ],
+            extra: {
+                type: "color-picker",
+                label: "Favorite Color",
+                field: "favoriteColor"
+            }
+        },
+        {
+            title: "Skin Profile",
+            field: "skin",
+            type: "sub-fields",
+            fields: [
+                {
+                    label: "Skin Type",
+                    field: "skinType",
+                    options: [
+                        { id: "oily", label: "Oily" },
+                        { id: "dry", label: "Dry" },
+                        { id: "combination", label: "Combination" },
+                        { id: "sensitive", label: "Sensitive" },
+                        { id: "normal", label: "Normal" }
+                    ]
+                },
+                {
+                    label: "Skin Tone",
+                    field: "skinTone",
+                    options: [
+                        { id: "very_fair", label: "Very Fair" },
+                        { id: "fair", label: "Fair" },
+                        { id: "medium", label: "Medium" },
+                        { id: "tan", label: "Tan" },
+                        { id: "deep", label: "Deep" }
+                    ]
+                },
+                {
+                    label: "Undertone",
+                    field: "undertone",
+                    options: [
+                        { id: "warm", label: "Warm" },
+                        { id: "cool", label: "Cool" },
+                        { id: "neutral", label: "Neutral" }
+                    ]
+                }
             ]
         },
         {
-            title: "Your Skin Type",
-            field: "skinType",
+            title: "Primary Skin Concern",
+            field: "skinConcern",
+            type: "multi-select",
             options: [
-                { id: "oily", label: "Oily", icon: "✨" },
-                { id: "dry", label: "Dry", icon: "🌵" },
-                { id: "combination", label: "Combination", icon: "🌓" },
-                { id: "sensitive", label: "Sensitive", icon: "🌸" },
-                { id: "normal", label: "Normal", icon: "✅" },
-                { id: "acne", label: "Acne-prone", icon: "🧬" }
+                { id: "acne", label: "Acne", icon: "🩹" },
+                { id: "pigmentation", label: "Pigmentation", icon: "🌑" },
+                { id: "dark_circles", label: "Dark Circles", icon: "🐼" },
+                { id: "dullness", label: "Dullness", icon: "☁️" },
+                { id: "fine_lines", label: "Fine Lines", icon: "〰️" },
+                { id: "texture", label: "Uneven Texture", icon: "🌋" },
+                { id: "sun_damage", label: "Sun Damage", icon: "☀️" }
             ]
         },
         {
-            title: "Your Hair Type",
-            field: "hairType",
-            options: [
-                { id: "straight", label: "Straight", icon: "📏" },
-                { id: "wavy", label: "Wavy", icon: "🌊" },
-                { id: "curly", label: "Curly", icon: "🌀" },
-                { id: "coily", label: "Coily", icon: "➰" }
+            title: "Hair Profile",
+            field: "hair",
+            type: "sub-fields",
+            fields: [
+                {
+                    label: "Hair Type",
+                    field: "hairType",
+                    options: [
+                        { id: "straight", label: "Straight" },
+                        { id: "wavy", label: "Wavy" },
+                        { id: "curly", label: "Curly" },
+                        { id: "coily", label: "Coily" }
+                    ]
+                },
+                {
+                    label: "Scalp Type",
+                    field: "scalpType",
+                    options: [
+                        { id: "oily", label: "Oily" },
+                        { id: "dry", label: "Dry" },
+                        { id: "normal", label: "Normal" },
+                        { id: "sensitive", label: "Sensitive" }
+                    ]
+                },
+                {
+                    label: "Thickness",
+                    field: "thickness",
+                    options: [
+                        { id: "thin", label: "Thin" },
+                        { id: "medium", label: "Medium" },
+                        { id: "thick", label: "Thick" }
+                    ]
+                }
             ]
         },
         {
-            title: "Primary Hair Concern",
+            title: "Major Hair Concern",
             field: "hairConcern",
+            type: "multi-select",
             options: [
                 { id: "hairfall", label: "Hair Fall", icon: "🍂" },
                 { id: "dandruff", label: "Dandruff", icon: "❄️" },
-                { id: "dryScalp", label: "Dry Scalp", icon: "🏜️" },
-                { id: "oilyScalp", label: "Oily Scalp", icon: "💧" },
                 { id: "frizz", label: "Frizz", icon: "☁️" },
-                { id: "damage", label: "Heat Damage", icon: "🔥" }
+                { id: "dryness", label: "Dryness", icon: "🌵" },
+                { id: "split_ends", label: "Split Ends", icon: "✂️" },
+                { id: "volume", label: "Lack of Volume", icon: "🌬️" }
             ]
         },
         {
-            title: "Style Personality",
-            field: "style",
+            title: "Overall Concerns",
+            field: "overallConcerns",
+            type: "multi-select",
             options: [
-                { id: "minimal", label: "Minimal & Clean", icon: "⚪" },
-                { id: "street", label: "Street & Trendy", icon: "🛹" },
-                { id: "elegant", label: "Elegant & Classic", icon: "💎" },
-                { id: "sporty", label: "Sporty & Active", icon: "👟" },
-                { id: "creative", label: "Creative & Artistic", icon: "🎨" },
-                { id: "experimental", label: "Bold & Experimental", icon: "🧪" }
+                { id: "confidence", label: "Confidence", icon: "✨" },
+                { id: "professional", label: "Professional Look", icon: "💼" },
+                { id: "glow_up", label: "Glow Up", icon: "🌟" },
+                { id: "wedding", label: "Wedding Preparation", icon: "💍" },
+                { id: "college", label: "College Styling", icon: "🎓" },
+                { id: "interview", label: "Interview Preparation", icon: "🤝" },
+                { id: "party", label: "Party Styling", icon: "🎉" },
+                { id: "grooming", label: "Everyday Grooming", icon: "🪞" }
             ]
         }
     ]
@@ -141,12 +264,20 @@ const recommendations = {
 
 let currentStep = 0;
 let userSelections = {
-    gender: null,
-    personality: null,
+    gender: 'other',
+    age: null,
+    bodyType: null,
+    style: [],
+    favoriteColor: '#6c5ce7',
     skinType: null,
+    skinTone: null,
+    undertone: null,
+    skinConcern: [],
     hairType: null,
-    hairConcern: null,
-    style: null
+    scalpType: null,
+    thickness: null,
+    hairConcern: [],
+    overallConcerns: []
 };
 
 // --- ANIMATION HELPERS ---
@@ -226,19 +357,34 @@ const quizSection = document.getElementById('quiz-section');
 const resultSection = document.getElementById('result-section');
 const startBtn = document.getElementById('start-btn');
 const restartBtn = document.getElementById('restart-btn');
-const quizStepContent = document.getElementById('quiz-step-content');
+const quizForm = document.getElementById('quiz-form');
 const progressFill = document.getElementById('progress-fill');
 const stepCount = document.getElementById('step-count');
 const resultContent = document.getElementById('result-content');
 
 startBtn.addEventListener('click', () => {
     switchSection(homeSection, quizSection);
-    renderStep();
+    showStep(0);
 });
 
 restartBtn.addEventListener('click', () => {
     currentStep = 0;
-    userSelections = { gender: null, personality: null, skinType: null, hairType: null, hairConcern: null, style: null };
+    userSelections = {
+        gender: 'other',
+        age: null,
+        bodyType: null,
+        style: [],
+        favoriteColor: '#6c5ce7',
+        skinType: null,
+        skinTone: null,
+        undertone: null,
+        skinConcern: [],
+        hairType: null,
+        scalpType: null,
+        thickness: null,
+        hairConcern: [],
+        overallConcerns: []
+    };
     switchSection(resultSection, homeSection);
 });
 
@@ -251,110 +397,346 @@ function switchSection(from, to) {
     }, 400);
 }
 
-function renderStep() {
-    const data = quizData.steps[currentStep];
-    stepCount.innerText = `Step ${currentStep + 1} of ${quizData.steps.length}`;
-    progressFill.style.width = `${((currentStep + 1) / quizData.steps.length) * 100}%`;
+// --- NAVIGATION LOGIC ---
 
-    let html = `
-        <h2 class="slide-in" style="margin-bottom: 2rem; color: #6c5ce7; font-size: 2rem;">${data.title}</h2>
-        <div class="card-grid fade-in">
-    `;
+function showStep(n) {
+    const steps = document.querySelectorAll('.form-step');
+    steps.forEach(step => step.classList.remove('active'));
+    steps[n].classList.add('active');
 
-    data.options.forEach(option => {
-        html += `
-            <div class="option-card" data-id="${option.id}" onclick="handleSelection('${data.field}', '${option.id}')">
-                <span class="option-icon" style="font-size: 3.5rem;">${option.icon}</span>
-                <span class="option-label" style="font-weight: 600; font-size: 1.1rem;">${option.label}</span>
-            </div>
-        `;
-    });
+    currentStep = n;
 
-    html += `</div>`;
-    quizStepContent.innerHTML = html;
+    // Update header info
+    stepCount.innerText = `Step ${currentStep + 1} of ${steps.length}`;
+    progressFill.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-window.handleSelection = (field, value) => {
-    userSelections[field] = value;
-    const cards = document.querySelectorAll('.option-card');
-    cards.forEach(c => c.classList.remove('selected'));
-    const selectedCard = document.querySelector(`[data-id="${value}"]`);
-    if (selectedCard) {
-        selectedCard.classList.add('selected');
-    }
-
-    setTimeout(() => {
-        if (currentStep < quizData.steps.length - 1) {
-            currentStep++;
-            renderStep();
-        } else {
-            generateResults();
+window.nextStep = () => {
+    if (validateStep(currentStep)) {
+        const steps = document.querySelectorAll('.form-step');
+        if (currentStep < steps.length - 1) {
+            showStep(currentStep + 1);
         }
-    }, 600);
+    }
 };
 
-function createRecCard(data) {
+window.prevStep = () => {
+    if (currentStep > 0) {
+        showStep(currentStep - 1);
+    }
+};
+
+function validateStep(n) {
+    const errorDiv = document.getElementById(`error-step${n + 1}`);
+    if (errorDiv) {
+        errorDiv.classList.remove('visible');
+        errorDiv.innerText = '';
+    }
+
+    if (n === 0) { // Step 1: Basic Details
+        if (!userSelections.gender || !userSelections.age) {
+            showError(n, "Please select both gender and age category.");
+            return false;
+        }
+    } else if (n === 1) { // Step 2: Body Type
+        if (!userSelections.bodyType) {
+            showError(n, "Please select your body type.");
+            return false;
+        }
+    } else if (n === 3) { // Step 4: Skin Profile
+        const skinType = document.getElementById('skinType').value;
+        const skinTone = document.getElementById('skinTone').value;
+        const undertone = document.getElementById('undertone').value;
+
+        if (!skinType || !skinTone || !undertone) {
+            showError(n, "Please complete all skin profile fields.");
+            return false;
+        }
+        userSelections.skinType = skinType;
+        userSelections.skinTone = skinTone;
+        userSelections.undertone = undertone;
+    }
+    return true;
+}
+
+function showError(stepIdx, msg) {
+    const errorDiv = document.getElementById(`error-step${stepIdx + 1}`);
+    if (errorDiv) {
+        errorDiv.innerText = msg;
+        errorDiv.classList.add('visible');
+    }
+}
+
+// --- OPTION SELECTION LOGIC ---
+
+window.selectOption = (el) => {
+    const field = el.dataset.field;
+    const value = el.dataset.id;
+
+    // Clear other selections in same group (if single select)
+    const parent = el.closest('.card-grid') || el.closest('.form-step');
+    parent.querySelectorAll(`[data-field="${field}"]`).forEach(card => card.classList.remove('selected'));
+
+    el.classList.add('selected');
+    userSelections[field] = value;
+
+    // Logic for conditional body shapes
+    if (field === 'gender') {
+        const femaleShapes = document.getElementById('body-shape-female');
+        const maleShapes = document.getElementById('body-shape-male');
+
+        if (value === 'male') {
+            femaleShapes.style.display = 'none';
+            maleShapes.style.display = 'block';
+        } else {
+            femaleShapes.style.display = 'block';
+            maleShapes.style.display = 'none';
+        }
+        // Reset bodyType selection when gender changes
+        userSelections.bodyType = null;
+        document.querySelectorAll('[data-field="bodyType"]').forEach(card => card.classList.remove('selected'));
+    }
+};
+
+window.toggleMultiOption = (el) => {
+    const field = el.dataset.field;
+    const value = el.dataset.id;
+
+    if (!Array.isArray(userSelections[field])) {
+        userSelections[field] = [];
+    }
+
+    const index = userSelections[field].indexOf(value);
+    if (index > -1) {
+        userSelections[field].splice(index, 1);
+        el.classList.remove('selected');
+    } else {
+        userSelections[field].push(value);
+        el.classList.add('selected');
+    }
+};
+
+window.updateColor = (val) => {
+    userSelections.favoriteColor = val;
+};
+
+// --- AI RECOMMENDATION ENGINE (V2) ---
+
+function getStyleIdentity(styles, bodyType, gender, age, favColor) {
+    const primaryStyle = styles[0] || 'Modern';
+    const report = {
+        title: "👗 Style Identity",
+        theme: `You shine best in **${primaryStyle}** aesthetics with **${bodyType}** optimized silhouettes.`,
+        outfits: [],
+        palette: getColorPalette(userSelections.skinTone, userSelections.undertone, favColor),
+        tips: ""
+    };
+
+    // Silhouette logic
+    if (bodyType === 'hourglass') report.tips = "Focus on waist-defining pieces to celebrate your balanced proportions.";
+    else if (bodyType === 'pear') report.tips = "Add volume to your upper body with structured shoulders or bold necklines.";
+    else if (bodyType === 'athletic' || bodyType === 'mesomorph') report.tips = "Play with softer fabrics or draped details to create fluid movement.";
+    else report.tips = "Structured blazers and clean lines will elevate your natural frame.";
+
+    // Outfit examples based on age & style
+    if (age === 'teen') {
+        report.outfits.push({
+            title: "Campus Statement",
+            desc: "Oversized graphic layers paired with tailored bottoms.",
+            why: "Balances comfort with high-fashion streetwear elements.",
+            img: "https://images.unsplash.com/photo-1523381235212-d73f80385227?auto=format&fit=crop&q=80&w=400"
+        });
+    } else if (age === 'mature' || age === 'senior') {
+        report.outfits.push({
+            title: "Timeless Sophistication",
+            desc: "Monochrome layers with high-quality textures.",
+            why: "Projecting authority while maintaining modern elegance.",
+            img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=400"
+        });
+    } else {
+        report.outfits.push({
+            title: "Urban Professional",
+            desc: "Structured basics with one 'hero' accessory.",
+            why: "Versatile enough for work-to-dinner transitions.",
+            img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=400"
+        });
+    }
+
+    return report;
+}
+
+function getSkincareIntelligence(type, concerns, tone, age) {
+    const report = {
+        title: "🧴 Skincare Intelligence",
+        theme: `Your ${type} skin is a canvas that loves **hydration and targeted balance**.`,
+        morning: [],
+        night: [],
+        ingredients: [],
+        tip: ""
+    };
+
+    if (concerns.includes('acne')) {
+        report.ingredients = ["Salicylic Acid", "Niacinamide", "Zinc"];
+        report.tip = "Focus on barrier repair; over-cleansing can actually trigger more oil.";
+        report.morning.push({ title: "Gentle Foaming Cleanser", desc: "Balance pH without stripping.", img: "https://images.unsplash.com/photo-1556228515-91953bc029bb?auto=format&fit=crop&q=80&w=400", why: "Prevents bacterial growth while keeping moisture locked in." });
+    } else if (age === 'mature' || age === 'senior' || concerns.includes('fine_lines')) {
+        report.ingredients = ["Retinol", "Peptides", "Ceramides"];
+        report.tip = "Massage items upward to support lymphatic drainage and skin elasticity.";
+        report.night.push({ title: "Renewal Retinoid", desc: "Nightly cell turnover boost.", img: "https://images.unsplash.com/photo-1594465919760-441fe5908ab0?auto=format&fit=crop&q=80&w=400", why: "Diminishes fine lines and improves skip texture overnight." });
+    } else {
+        report.ingredients = ["Vitamin C", "Hyaluronic Acid"];
+        report.tip = "Consistency is key. 10 minutes of self-care daily transforms your skin.";
+        report.morning.push({ title: "Brightening Glow Serum", desc: "Anti-oxidant shield.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400", why: "Protects against urban pollution and brightens tone." });
+    }
+
+    return report;
+}
+
+function getHaircareBlueprint(type, concerns, thickness) {
+    const report = {
+        title: "💇 Haircare Blueprint",
+        theme: `Your **${thickness} ${type} hair** thrives on meticulous care and minimal heat.`,
+        recommendations: [],
+        advice: ""
+    };
+
+    if (concerns.includes('hairfall')) {
+        report.advice = "Avoid tight hairstyles and focus on scalp stimulation.";
+        report.recommendations.push({ title: "Stimulating Scalp Oil", desc: "Rosmary & Peppermint blend.", why: "Increases blood flow to follicles to support new growth.", img: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&q=80&w=400" });
+    } else if (concerns.includes('frizz') || concerns.includes('dryness')) {
+        report.advice = "Switch to a silk pillowcase to reduce mechanical friction.";
+        report.recommendations.push({ title: "Intense Moisture Mask", desc: "Shea butter base.", why: "Seals the cuticle to prevent moisture evaporation.", img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a3ef?auto=format&fit=crop&q=80&w=400" });
+    } else {
+        report.advice = "A cool water rinse at the end of your shower adds instant shine.";
+        report.recommendations.push({ title: "Weightless Volume Wash", desc: "Biotin infused.", why: "Provides lift without residue.", img: "https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&q=80&w=400" });
+    }
+
+    return report;
+}
+
+window.generateResults = () => {
+    if (validateStep(currentStep)) {
+        showLoading(() => {
+            const { gender, age, bodyType, style, favoriteColor, skinType, skinTone, undertone, skinConcern, hairType, scalpType, thickness, hairConcern, overallConcerns } = userSelections;
+
+            const styleRec = getStyleIdentity(style, bodyType, gender, age, favoriteColor);
+            const skinRec = getSkincareIntelligence(skinType, skinConcern, skinTone, age);
+            const hairRec = getHaircareBlueprint(hairType, hairConcern, thickness);
+
+            const reportHTML = `
+                <div class="identity-report-header fade-in">
+                    <p class="report-subtitle">Personalized AI Identity Report</p>
+                    <h2 class="report-main-title">The ${gender.charAt(0).toUpperCase() + gender.slice(1)} Vision</h2>
+                </div>
+
+                <div class="report-section reveal-step" style="--d: 0.1s">
+                    <div class="section-badge">${styleRec.title}</div>
+                    <p class="section-theme">${styleRec.theme}</p>
+                    <div class="rec-grid">
+                        ${styleRec.outfits.map(o => createPremiumCard(o)).join('')}
+                    </div>
+                    <div class="palette-container" style="margin-top: 2rem;">
+                        <p style="font-weight: 600; margin-bottom: 1rem;">Power Palette:</p>
+                        <div style="display: flex; gap: 0.8rem;">
+                            ${styleRec.palette.map(c => `<div class="color-swatch-large" style="background: ${c}" title="${c}"></div>`).join('')}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-section reveal-step" style="--d: 0.3s">
+                    <div class="section-badge">${skinRec.title}</div>
+                    <p class="section-theme">${skinRec.theme}</p>
+                    <div class="ingredients-cloud">
+                        ${skinRec.ingredients.map(i => `<span class="ingredient-tag">${i}</span>`).join('')}
+                    </div>
+                    <div class="rec-grid">
+                        ${[...skinRec.morning, ...skinRec.night].map(s => createPremiumCard(s)).join('')}
+                    </div>
+                    <div class="lifestyle-note">💡 <strong>AI Tip:</strong> ${skinRec.tip}</div>
+                </div>
+
+                <div class="report-section reveal-step" style="--d: 0.5s">
+                    <div class="section-badge">${hairRec.title}</div>
+                    <p class="section-theme">${hairRec.theme}</p>
+                    <div class="rec-grid">
+                        ${hairRec.recommendations.map(h => createPremiumCard(h)).join('')}
+                    </div>
+                    <div class="lifestyle-note">💠 <strong>Advice:</strong> ${hairRec.advice}</div>
+                </div>
+
+                <div class="report-section reveal-step" style="--d: 0.7s">
+                    <div class="section-badge">🌟 Confidence Boost</div>
+                    <div class="confidence-box">
+                        <p class="confidence-quote">"${getConfidenceTip(overallConcerns, age)}"</p>
+                    </div>
+                </div>
+            `;
+
+            resultContent.innerHTML = reportHTML;
+            switchSection(quizSection, resultSection);
+
+            // Trigger confetti for the "report" reveal
+            if (typeof confetti !== 'undefined') {
+                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            }
+        });
+    }
+};
+
+function createPremiumCard(data) {
     return `
-        <div class="rec-card fade-in">
-            <div class="rec-card-image" style="background-image: url('${data.img}')"></div>
-            <div class="rec-card-info">
-                <h4>${data.title}</h4>
-                <p>${data.desc}</p>
+        <div class="premium-rec-card">
+            <div class="card-img-wrapper">
+                <img src="${data.img}" alt="${data.title}">
+                <div class="why-badge">Why it suits you</div>
+            </div>
+            <div class="card-content">
+                <h3>${data.title}</h3>
+                <p class="card-desc">${data.desc}</p>
+                <div class="why-text">${data.why}</div>
             </div>
         </div>
     `;
 }
 
-function generateResults() {
-    const { skinType, personality, hairType, hairConcern, style, gender } = userSelections;
-    const genderKey = (gender === 'male' || gender === 'female') ? gender : 'other';
-    const personaTitle = `${userSelections.personality.charAt(0).toUpperCase() + userSelections.personality.slice(1)} ${userSelections.style.charAt(0).toUpperCase() + userSelections.style.slice(1)} Icon`;
+function getColorPalette(tone, undertone, favorite) {
+    const palettes = {
+        warm: ['#FF6B6B', '#FFD93D', '#6BCB77', '#F0A500'],
+        cool: ['#B197FC', '#74C0FC', '#63E6BE', '#339AF0'],
+        neutral: ['#868E96', '#ADB5BD', '#212529', '#E9ECEF']
+    };
+    const base = palettes[undertone] || palettes.neutral;
+    return [favorite, ...base.slice(0, 3)];
+}
 
-    const skinRecs = recommendations.skincare;
-    const hairRecs = recommendations.haircare;
-    const styleRec = recommendations.style[style][genderKey];
+function getConfidenceTip(concerns, age) {
+    if (concerns.includes('professional')) return "Success is 80% confidence. Wear pieces that make you feel powerful, and your performance will follow.";
+    if (concerns.includes('glow_up')) return "Consistency is your greatest tool. Small, daily rituals lead to massive transformations over time.";
+    if (age === 'teen') return "The most attractive thing you can wear is your unique personality. Carry it with pride!";
+    return "Elegance is not about being noticed, it's about being remembered.";
+}
 
-    let html = `
-        <div class="fade-in" style="text-align: center; margin-bottom: 4rem;">
-            <p style="font-size: 1.2rem; color: #636e72;">Found your ultimate vibe!</p>
-            <h3 class="animated-title" style="font-size: 3.5rem; margin: 0.5rem 0;">${personaTitle}</h3>
-        </div>
-        
-        <div class="result-category">
-            <h4 class="category-title">✨ Skincare Hero Routine</h4>
-            <div class="rec-grid">
-                ${createRecCard(skinRecs.cleansers[skinType])}
-                ${createRecCard(skinRecs.moisturizers[skinType])}
-            </div>
-        </div>
+// --- INITIALIZATION ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize UI
+    const steps = document.querySelectorAll('.form-step');
+    stepCount.innerText = `Step 1 of ${steps.length}`;
+    progressFill.style.width = `${(1 / steps.length) * 100}%`;
+});
 
-        <div class="result-category" style="margin-top: 4rem;">
-            <h4 class="category-title">💇 Main Character Hair</h4>
-            <div class="rec-grid">
-                ${createRecCard(hairRecs.shampoo[hairConcern])}
-                ${createRecCard({
-        title: "Special Treatment",
-        desc: "Apply to mid-lengths and ends for maximum shine and protection.",
-        img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a3ef?auto=format&fit=crop&q=80&w=400"
-    })}
-            </div>
-        </div>
-
-        <div class="result-category" style="margin-top: 4rem;">
-            <h4 class="category-title">🧥 Style Signature</h4>
-            <div class="rec-grid solo-card">
-                ${createRecCard(styleRec)}
-            </div>
-        </div>
-
-        <div class="lifestyle-tip fade-in" style="margin-top: 5rem; background: white; color: #2d3436; box-shadow: 0 20px 50px rgba(0,0,0,0.05);">
-            <h3 style="margin-bottom: 1rem; font-weight: 800; font-size: 1.5rem;">💡 Daily Energy Tip</h3>
-            <p style="font-size: 1.2rem; line-height: 1.6; opacity: 0.8;">
-                Since you're <strong>${personality}</strong>, try integrating small mindfulness rituals into your day to keep your internal baseline steady. Your skin will thank you!
-            </p>
+// Utility to show loading before results
+function showLoading(callback) {
+    const originalContent = quizForm.innerHTML;
+    quizForm.innerHTML = `
+        <div class="loading-container fade-in" style="flex-direction: column; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+            <div class="loader"></div>
+            <p style="margin-top: 2rem; font-weight: 600; color: #6c5ce7; font-size: 1.2rem;">Our AI is analyzing your profile...</p>
         </div>
     `;
-
-    resultContent.innerHTML = html;
-    switchSection(quizSection, resultSection);
+    setTimeout(() => {
+        quizForm.innerHTML = originalContent;
+        callback();
+    }, 1500);
 }

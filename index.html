@@ -34,6 +34,82 @@
             </div>
         </section>
 
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="page-section">
+            <div class="container">
+                <h2 class="section-title">How PERSONAX Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card" style="--delay: 0.1s">
+                        <div class="step-icon">📝</div>
+                        <h3>Step 1</h3>
+                        <p>Enter basic details (age, gender, preferences)</p>
+                    </div>
+                    <div class="step-card" style="--delay: 0.2s">
+                        <div class="step-icon">🧬</div>
+                        <h3>Step 2</h3>
+                        <p>Complete your personal style & skin profile</p>
+                    </div>
+                    <div class="step-card" style="--delay: 0.3s">
+                        <div class="step-icon">🤖</div>
+                        <h3>Step 3</h3>
+                        <p>AI analyzes your personality and concerns</p>
+                    </div>
+                    <div class="step-card" style="--delay: 0.4s">
+                        <div class="step-icon">⚙️</div>
+                        <h3>Step 4</h3>
+                        <p>Smart recommendation engine processes inputs</p>
+                    </div>
+                    <div class="step-card" style="--delay: 0.5s">
+                        <div class="step-icon">✨</div>
+                        <h3>Step 5</h3>
+                        <p>Personalized products + styling suggestions are generated</p>
+                    </div>
+                    <div class="step-card" style="--delay: 0.6s">
+                        <div class="step-icon">🖼️</div>
+                        <h3>Step 6</h3>
+                        <p>Visual mood board with images is shown</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Features Section -->
+        <section id="features" class="page-section">
+            <div class="container">
+                <h2 class="section-title">Platform Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🤖</span>
+                        <p>AI-powered personalized recommendations</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📅</span>
+                        <p>Age-based smart filtering</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📐</span>
+                        <p>Body-shape styling guidance</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔍</span>
+                        <p>Skin & hair concern analysis</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎨</span>
+                        <p>Personalized color palette suggestions</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📸</span>
+                        <p>Visual recommendation cards with images</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📱</span>
+                        <p>Mobile responsive and animated UI</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Quiz Section -->
         <section id="quiz-section">
             <div class="container">
@@ -45,8 +121,271 @@
                         <span id="step-count">Step 1 of 6</span>
                     </div>
 
-                    <div id="quiz-step-content">
-                        <!-- Content will be dynamically inserted here -->
+                    <div id="quiz-form">
+                        <!-- Step 1: Basic Details -->
+                        <div class="form-step active" id="step1">
+                            <h2 class="slide-in">Basic Details</h2>
+                            <div class="input-group">
+                                <label>Select Your Gender</label>
+                                <div class="card-grid mini-grid">
+                                    <div class="option-card" data-field="gender" data-id="male"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">👨</span>
+                                        <span class="option-label">Male</span>
+                                    </div>
+                                    <div class="option-card" data-field="gender" data-id="female"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">👩</span>
+                                        <span class="option-label">Female</span>
+                                    </div>
+                                    <div class="option-card" data-field="gender" data-id="other"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">✨</span>
+                                        <span class="option-label">Other</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Age Category</label>
+                                <div class="card-grid mini-grid">
+                                    <div class="option-card" data-field="age" data-id="teen"
+                                        onclick="selectOption(this)">
+                                        <span class="option-label">13–17 (Teen)</span>
+                                    </div>
+                                    <div class="option-card" data-field="age" data-id="young"
+                                        onclick="selectOption(this)">
+                                        <span class="option-label">18–25 (Young Adult)</span>
+                                    </div>
+                                    <div class="option-card" data-field="age" data-id="adult"
+                                        onclick="selectOption(this)">
+                                        <span class="option-label">26–35 (Adult)</span>
+                                    </div>
+                                    <div class="option-card" data-field="age" data-id="mature"
+                                        onclick="selectOption(this)">
+                                        <span class="option-label">36–50 (Mature)</span>
+                                    </div>
+                                    <div class="option-card" data-field="age" data-id="senior"
+                                        onclick="selectOption(this)">
+                                        <span class="option-label">50+</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="error-msg" id="error-step1"></div>
+                            <div class="btn-group">
+                                <button type="button" class="glowing-btn" onclick="nextStep()">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Body Type -->
+                        <div class="form-step" id="step2">
+                            <h2 class="slide-in">Body Type</h2>
+                            <p class="step-desc">Select your primary body shape for styling guidance.</p>
+
+                            <!-- Female Shapes -->
+                            <div id="body-shape-female" class="body-shape-container">
+                                <div class="card-grid">
+                                    <div class="option-card" data-field="bodyType" data-id="hourglass"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">⏳</span><span class="option-label">Hourglass</span>
+                                    </div>
+                                    <div class="option-card" data-field="bodyType" data-id="pear"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">🍐</span><span class="option-label">Pear</span>
+                                    </div>
+                                    <div class="option-card" data-field="bodyType" data-id="apple"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">🍎</span><span class="option-label">Apple</span>
+                                    </div>
+                                    <div class="option-card" data-field="bodyType" data-id="rectangle"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">📏</span><span class="option-label">Rectangle</span>
+                                    </div>
+                                    <div class="option-card" data-field="bodyType" data-id="inverted_triangle"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">🔻</span><span class="option-label">Inverted
+                                            Triangle</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Male Shapes -->
+                            <div id="body-shape-male" class="body-shape-container" style="display: none;">
+                                <div class="card-grid">
+                                    <div class="option-card" data-field="bodyType" data-id="ectomorph"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">🏃</span><span class="option-label">Ectomorph</span>
+                                    </div>
+                                    <div class="option-card" data-field="bodyType" data-id="mesomorph"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">💪</span><span class="option-label">Mesomorph</span>
+                                    </div>
+                                    <div class="option-card" data-field="bodyType" data-id="endomorph"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">🏋️</span><span class="option-label">Endomorph</span>
+                                    </div>
+                                    <div class="option-card" data-field="bodyType" data-id="athletic"
+                                        onclick="selectOption(this)">
+                                        <span class="option-icon">🏅</span><span class="option-label">Athletic</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="error-msg" id="error-step2"></div>
+                            <div class="btn-group">
+                                <button type="button" class="secondary-btn" onclick="prevStep()">Back</button>
+                                <button type="button" class="glowing-btn" onclick="nextStep()">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Style Preferences -->
+                        <div class="form-step" id="step3">
+                            <h2 class="slide-in">Style Preferences</h2>
+                            <div class="card-grid">
+                                <div class="option-card multi" data-field="style" data-id="casual"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">👕</span><span class="option-label">Casual</span>
+                                </div>
+                                <div class="option-card multi" data-field="style" data-id="formal"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">👔</span><span class="option-label">Formal</span>
+                                </div>
+                                <div class="option-card multi" data-field="style" data-id="streetwear"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">🛹</span><span class="option-label">Streetwear</span>
+                                </div>
+                                <div class="option-card multi" data-field="style" data-id="minimalist"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">⚪</span><span class="option-label">Minimalist</span>
+                                </div>
+                                <div class="option-card multi" data-field="style" data-id="sporty"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">👟</span><span class="option-label">Sporty</span>
+                                </div>
+                                <div class="option-card multi" data-field="style" data-id="elegant"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">💎</span><span class="option-label">Elegant</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-top: 2rem;">
+                                <label>Favorite Color</label>
+                                <input type="color" id="fav-color" class="color-input" value="#6c5ce7"
+                                    onchange="updateColor(this.value)">
+                            </div>
+                            <div class="error-msg" id="error-step3"></div>
+                            <div class="btn-group">
+                                <button type="button" class="secondary-btn" onclick="prevStep()">Back</button>
+                                <button type="button" class="glowing-btn" onclick="nextStep()">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Skin Profile -->
+                        <div class="form-step" id="step4">
+                            <h2 class="slide-in">Skin Profile</h2>
+                            <div class="sub-fields-grid">
+                                <div class="input-group">
+                                    <label>Skin Type</label>
+                                    <select class="modern-select" id="skinType">
+                                        <option value="" disabled selected>Select Skin Type</option>
+                                        <option value="oily">Oily</option>
+                                        <option value="dry">Dry</option>
+                                        <option value="combination">Combination</option>
+                                        <option value="sensitive">Sensitive</option>
+                                        <option value="normal">Normal</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Skin Tone</label>
+                                    <select class="modern-select" id="skinTone">
+                                        <option value="" disabled selected>Select Skin Tone</option>
+                                        <option value="very_fair">Very Fair</option>
+                                        <option value="fair">Fair</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="tan">Tan</option>
+                                        <option value="deep">Deep</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Undertone</label>
+                                    <select class="modern-select" id="undertone">
+                                        <option value="" disabled selected>Select Undertone</option>
+                                        <option value="warm">Warm</option>
+                                        <option value="cool">Cool</option>
+                                        <option value="neutral">Neutral</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="error-msg" id="error-step4"></div>
+                            <div class="btn-group">
+                                <button type="button" class="secondary-btn" onclick="prevStep()">Back</button>
+                                <button type="button" class="glowing-btn" onclick="nextStep()">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Skin & Hair Concerns -->
+                        <div class="form-step" id="step5">
+                            <h2 class="slide-in">Concerns</h2>
+                            <div class="input-group">
+                                <label>Primary Skin Concerns</label>
+                                <div class="card-grid mini-grid">
+                                    <div class="option-card multi" data-field="skinConcern" data-id="acne"
+                                        onclick="toggleMultiOption(this)">🩹 Acne</div>
+                                    <div class="option-card multi" data-field="skinConcern" data-id="pigmentation"
+                                        onclick="toggleMultiOption(this)">🌑 Pigmentation</div>
+                                    <div class="option-card multi" data-field="skinConcern" data-id="dullness"
+                                        onclick="toggleMultiOption(this)">☁️ Dullness</div>
+                                    <div class="option-card multi" data-field="skinConcern" data-id="fine_lines"
+                                        onclick="toggleMultiOption(this)">〰️ Fine Lines</div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Hair Concerns</label>
+                                <div class="card-grid mini-grid">
+                                    <div class="option-card multi" data-field="hairConcern" data-id="hairfall"
+                                        onclick="toggleMultiOption(this)">🍂 Hair Fall</div>
+                                    <div class="option-card multi" data-field="hairConcern" data-id="dandruff"
+                                        onclick="toggleMultiOption(this)">❄️ Dandruff</div>
+                                    <div class="option-card multi" data-field="hairConcern" data-id="frizz"
+                                        onclick="toggleMultiOption(this)">☁️ Frizz</div>
+                                    <div class="option-card multi" data-field="hairConcern" data-id="dryness"
+                                        onclick="toggleMultiOption(this)">🌵 Dryness</div>
+                                </div>
+                            </div>
+                            <div class="error-msg" id="error-step5"></div>
+                            <div class="btn-group">
+                                <button type="button" class="secondary-btn" onclick="prevStep()">Back</button>
+                                <button type="button" class="glowing-btn" onclick="nextStep()">Final Step</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 6: Final Review -->
+                        <div class="form-step" id="step6">
+                            <h2 class="slide-in">Overall Goals</h2>
+                            <div class="card-grid">
+                                <div class="option-card multi" data-field="overallConcerns" data-id="confidence"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">✨</span><span class="option-label">Confidence</span>
+                                </div>
+                                <div class="option-card multi" data-field="overallConcerns" data-id="professional"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">💼</span><span class="option-label">Professional
+                                        Look</span>
+                                </div>
+                                <div class="option-card multi" data-field="overallConcerns" data-id="glow_up"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">🌟</span><span class="option-label">Glow Up</span>
+                                </div>
+                                <div class="option-card multi" data-field="overallConcerns" data-id="party"
+                                    onclick="toggleMultiOption(this)">
+                                    <span class="option-icon">🎉</span><span class="option-label">Party Styling</span>
+                                </div>
+                            </div>
+                            <div class="error-msg" id="error-step6"></div>
+                            <div class="btn-group" style="margin-top: 3rem;">
+                                <button type="button" class="secondary-btn" onclick="prevStep()">Back</button>
+                                <button type="button" class="glowing-btn" onclick="generateResults()">Analyze My
+                                    Profile</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
