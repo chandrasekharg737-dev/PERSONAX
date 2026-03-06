@@ -194,64 +194,27 @@ const quizData = {
 
 const recommendations = {
     skincare: {
-        cleansers: {
-            oily: { title: "Oil-Control Foaming Cleanser", desc: "Formulated with Salicylic Acid to deep-clean pores and regulate sebum.", img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400" },
-            dry: { title: "Hydrating Milk Cleanser", desc: "A creamy, non-stripping formula that replenishes moisture while cleansing.", img: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=400" },
-            combination: { title: "Balanced Gel Cleanser", desc: "Targets oily zones while soothing dry areas for a perfect equilibrium.", img: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=400" },
-            sensitive: { title: "Ultra-Gentle Micellar Water", desc: "Soothing, fragrance-free formula to remove impurities without irritation.", img: "https://images.unsplash.com/photo-1617897903246-7392ce73c176?auto=format&fit=crop&q=80&w=400" },
-            normal: { title: "Daily PH Balanced Wash", desc: "Maintains your natural skin barrier for a healthy, glowing complexion.", img: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&q=80&w=400" },
-            acne: { title: "Clarifying Acne Wash", desc: "Active Benzoyl Peroxide to fight breakouts and prevent future spots.", img: "https://images.unsplash.com/photo-1556228515-91953bc029bb?auto=format&fit=crop&q=80&w=400" }
-        },
-        moisturizers: {
-            oily: { title: "Matte Water Gel", desc: "Weightless hydration that leaves a smooth, shine-free finish.", img: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&q=80&w=400" },
-            dry: { title: "Ceramide Barrier Cream", desc: "Rich in essential lipids to lock in moisture and repair very dry skin.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400" },
-            combination: { title: "Light Renewal Lotion", desc: "A versatile moisturizer that hydrates deeply without feeling heavy.", img: "https://images.unsplash.com/photo-1631730486784-5456117f6931?auto=format&fit=crop&q=80&w=400" },
-            sensitive: { title: "Aloe Soothing Cream", desc: "Instantly calms redness and provides a protective cooling barrier.", img: "https://images.unsplash.com/photo-1626783416763-67a92e5e7266?auto=format&fit=crop&q=80&w=400" },
-            normal: { title: "Vitamin-Enriched Cream", desc: "Boosts skin vitality with a blend of antioxidants and hydration.", img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=400" },
-            acne: { title: "Non-Comedogenic Hydrator", desc: "Won't clog pores, designed to soothe skin treated with acne actives.", img: "https://images.unsplash.com/photo-1556229174-5e42a09e45af?auto=format&fit=crop&q=80&w=400" }
-        }
+        routine: [
+            { id: "cleanser_oily", title: "Minty Oil-Control Cleanser", desc: "Fresh mint extracts to keep your skin matte and happy.", why: "Matches your oily skin type by gently removing excess sebum.", img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400" },
+            { id: "cleanser_dry", title: "Peach Hydration Wash", desc: "Creamy peach goodness to nourish and soften dry skin.", why: "Replenishes the moisture your dry skin craves.", img: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=400" },
+            { id: "moisturizer_oily", title: "Sky-Blue Water Gel", desc: "Weightless hydration that feels like a fresh breeze.", why: "Non-greasy formula perfect for your oily profile.", img: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&q=80&w=400" },
+            { id: "moisturizer_dry", title: "Lavender Barrier Cream", desc: "Soothing lavender and ceramides to lock in moisture.", why: "Extra richness to protect your skin's natural barrier.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400" },
+            { id: "acne_serum", title: "Clear Sky Blemish Spot Treat", desc: "Targeted care with zinc and tea tree for clear skin.", why: "Because you mentioned acne as a primary concern.", img: "https://images.unsplash.com/photo-1556228515-91953bc029bb?auto=format&fit=crop&q=80&w=400" }
+        ]
     },
     haircare: {
-        shampoo: {
-            hairfall: { title: "Stimulating Growth Wash", desc: "Caffeine-enriched to wake up your follicles and reduce thinning.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400" },
-            dandruff: { title: "Cooling Scalp Relief", desc: "Powerful Zinc therapy to eliminate flakes and soothe itchiness.", img: "https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&q=80&w=400" },
-            dryScalp: { title: "Nourishing Scalp Therapy", desc: "Gently exfoliates and hydrates the scalp with natural oils.", img: "https://images.unsplash.com/photo-1626783416763-67a92e5e7266?auto=format&fit=crop&q=80&w=400" },
-            oilyScalp: { title: "Deep Purifying Charcoal", desc: "Detoxifies the scalp and removes excess oil for weightless hair.", img: "https://images.unsplash.com/photo-1519735891395-50e50125860d?auto=format&fit=crop&q=80&w=400" },
-            frizz: { title: "Smoothing Silk Shampoo", desc: "Tames flyaways and provides a protective shield against humidity.", img: "https://images.unsplash.com/photo-1624338466581-24758763750a?auto=format&fit=crop&q=80&w=400" },
-            damage: { title: "Bond Repair Recovery", desc: "Intense protein therapy to rebuild broken hair bonds and split ends.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400" }
-        }
+        routine: [
+            { id: "shampoo_hairfall", title: "Root-Revive Mint Wash", desc: "Energizing mint and caffeine to wake up those follicles.", why: "Specifically chosen to help with your hair fall concerns.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400" },
+            { id: "shampoo_dandruff", title: "Cooling Lavender Scrub", desc: "Scalp relief that smells amazing and works wonders.", why: "Gentle exfoliation for your dandruff-prone scalp.", img: "https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&q=80&w=400" },
+            { id: "shampoo_dry", title: "Peach Glaze Conditioner", desc: "Silky finish for hair that's seen better days.", why: "Provides the hydration your dry hair needs.", img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a3ef?auto=format&fit=crop&q=80&w=400" }
+        ]
     },
     style: {
-        minimal: {
-            male: { title: "Modern Minimalist", desc: "Elevated basics in neutral tones. Think high-quality tees and tailored trousers.", img: "https://images.unsplash.com/photo-1516826435551-36a8a09e4545?auto=format&fit=crop&q=80&w=400" },
-            female: { title: "Quiet Luxury", desc: "Clean lines, silk fabrics, and a sophisticated monochromatic palette.", img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=400" },
-            other: { title: "Clean Slate", desc: "Versatile, structural pieces that prioritize comfort and silhouette.", img: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=400" }
-        },
-        street: {
-            male: { title: "Street Icon", desc: "Bold graphics, unique textures, and the latest sneaker drops.", img: "https://images.unsplash.com/photo-1552066344-24632e5de466?auto=format&fit=crop&q=80&w=400" },
-            female: { title: "Urban Edge", desc: "Oversized silhouettes mixed with high-fashion statement accessories.", img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400" },
-            other: { title: "Trend Setter", desc: "Eclectic urban wear that breaks traditional fashion boundaries.", img: "https://images.unsplash.com/photo-1523381235212-d73f80385227?auto=format&fit=crop&q=80&w=400" }
-        },
-        elegant: {
-            male: { title: "Classic Gentleman", desc: "Sharp tailoring, fine wools, and timeless leather craftsmanship.", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=400" },
-            female: { title: "Timeless Grace", desc: "Flowing dresses, pearl details, and a focus on feminine elegance.", img: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&q=80&w=400" },
-            other: { title: "Refined Soul", desc: "Sophisticated ensembles featuring luxurious fabrics and sharp cuts.", img: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=400" }
-        },
-        sporty: {
-            male: { title: "Performance Pro", desc: "Innovative athletic gear that looks good at the gym or on the street.", img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=400" },
-            female: { title: "Atheisure Chic", desc: "Sculpting tech-fabrics paired with functional, stylish outer layers.", img: "https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&q=80&w=400" },
-            other: { title: "Dynamic Active", desc: "Ergonomic designs that keep up with your high-energy lifestyle.", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=400" }
-        },
-        creative: {
-            male: { title: "Artistic Vision", desc: "Mixed patterns, vintage layers, and meaningful artisan accessories.", img: "https://images.unsplash.com/photo-1503910321442-7fefb2823b4d?auto=format&fit=crop&q=80&w=400" },
-            female: { title: "Bohemian Muse", desc: "Free-flowing fabrics, intricate prints, and a touch of vintage whimsey.", img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=400" },
-            other: { title: "Creative Spirit", desc: "Unique, hand-picked garments that tell a story of artistic expression.", img: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&q=80&w=400" }
-        },
-        experimental: {
-            male: { title: "Future Forward", desc: "Metallic finishes, unusual cuts, and high-impact futuristic style.", img: "https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=400" },
-            female: { title: "Avant-Garde Queen", desc: "Structural, boundary-pushing pieces that redefine wearable art.", img: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=400" },
-            other: { title: "Cosmic Explorer", desc: "Bold, otherworldly silhouettes that challenge fashion norms.", img: "https://images.unsplash.com/photo-1481016570479-9eab6349fde7?auto=format&fit=crop&q=80&w=400" }
-        }
+        outfits: [
+            { id: "pear_casual", title: "A-Line Meadow Dress", desc: "Flowy and fun, perfect for a sunny day out.", why: "Flatters your pear body shape by highlighting your waist.", img: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=400" },
+            { id: "athletic_structured", title: "Bold Blazer & Denim", desc: "Sharp and stylish for an effortless look.", why: "Structured shoulders complement your athletic frame perfectly.", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=400" },
+            { id: "streetwear_teen", title: "Urban Pastel Oversize", desc: "Comfort meets hype in the best way possible.", why: "Matches your youthfulness and streetwear style preference.", img: "https://images.unsplash.com/photo-1523381235212-d73f80385227?auto=format&fit=crop&q=80&w=400" }
+        ]
     },
     nightRoutine: {
         calm: "Soothing Lavender Mask",
@@ -685,20 +648,27 @@ window.generateResults = () => {
     }
 };
 
+// --- HELPER FUNCTIONS ---
+
 function createPremiumCard(data) {
     return `
-        <div class="premium-rec-card">
+        <div class="premium-rec-card fade-up">
             <div class="card-img-wrapper">
-                <img src="${data.img}" alt="${data.title}">
-                <div class="why-badge">Why it suits you</div>
+                <img src="${data.img}" alt="${data.title}" onerror="handleImageError(this)">
+                <div class="why-badge">AI Pick</div>
             </div>
             <div class="card-content">
                 <h3>${data.title}</h3>
                 <p class="card-desc">${data.desc}</p>
-                <div class="why-text">${data.why}</div>
+                <div class="why-text">✨ ${data.why}</div>
             </div>
         </div>
     `;
+}
+
+function handleImageError(img) {
+    img.onerror = null;
+    img.src = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=400";
 }
 
 function getColorPalette(tone, undertone, favorite) {
@@ -718,25 +688,40 @@ function getConfidenceTip(concerns, age) {
     return "Elegance is not about being noticed, it's about being remembered.";
 }
 
+// Utility to show multi-stage loading before results
+function showLoading(callback) {
+    const originalContent = quizForm.innerHTML;
+    const loadingSteps = [
+        "Scanning your unique traits...",
+        "Analyzing skin & hair profile...",
+        "Matching with style identity...",
+        "Generating your custom blueprint..."
+    ];
+
+    let step = 0;
+    quizForm.innerHTML = `
+        <div class="loading-container fade-in" style="flex-direction: column; display: flex; align-items: center; justify-content: center; min-height: 400px;">
+            <div class="loader"></div>
+            <p id="loading-text" style="margin-top: 2rem; font-weight: 700; color: #FF7675; font-size: 1.4rem; font-family: 'Outfit';">Starting AI analysis...</p>
+        </div>
+    `;
+
+    const interval = setInterval(() => {
+        if (step < loadingSteps.length) {
+            document.getElementById('loading-text').innerText = loadingSteps[step];
+            step++;
+        } else {
+            clearInterval(interval);
+            quizForm.innerHTML = originalContent;
+            callback();
+        }
+    }, 800);
+}
+
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize UI
     const steps = document.querySelectorAll('.form-step');
-    stepCount.innerText = `Step 1 of ${steps.length}`;
-    progressFill.style.width = `${(1 / steps.length) * 100}%`;
+    if (stepCount) stepCount.innerText = `Step 1 of ${steps.length}`;
+    if (progressFill) progressFill.style.width = `${(1 / steps.length) * 100}%`;
 });
-
-// Utility to show loading before results
-function showLoading(callback) {
-    const originalContent = quizForm.innerHTML;
-    quizForm.innerHTML = `
-        <div class="loading-container fade-in" style="flex-direction: column; display: flex; align-items: center; justify-content: center; min-height: 300px;">
-            <div class="loader"></div>
-            <p style="margin-top: 2rem; font-weight: 600; color: #6c5ce7; font-size: 1.2rem;">Our AI is analyzing your profile...</p>
-        </div>
-    `;
-    setTimeout(() => {
-        quizForm.innerHTML = originalContent;
-        callback();
-    }, 1500);
-}
