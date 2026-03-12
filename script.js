@@ -194,34 +194,110 @@ const quizData = {
 
 const recommendations = {
     skincare: {
-        routine: [
-            { id: "cleanser_oily", title: "Minty Oil-Control Cleanser", desc: "Fresh mint extracts to keep your skin matte and happy.", why: "Matches your oily skin type by gently removing excess sebum.", img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400" },
-            { id: "cleanser_dry", title: "Peach Hydration Wash", desc: "Creamy peach goodness to nourish and soften dry skin.", why: "Replenishes the moisture your dry skin craves.", img: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=400" },
-            { id: "moisturizer_oily", title: "Sky-Blue Water Gel", desc: "Weightless hydration that feels like a fresh breeze.", why: "Non-greasy formula perfect for your oily profile.", img: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&q=80&w=400" },
-            { id: "moisturizer_dry", title: "Lavender Barrier Cream", desc: "Soothing lavender and ceramides to lock in moisture.", why: "Extra richness to protect your skin's natural barrier.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400" },
-            { id: "acne_serum", title: "Clear Sky Blemish Spot Treat", desc: "Targeted care with zinc and tea tree for clear skin.", why: "Because you mentioned acne as a primary concern.", img: "https://images.unsplash.com/photo-1556228515-91953bc029bb?auto=format&fit=crop&q=80&w=400" }
-        ]
+        oily: {
+            title: "Minty Oil-Control Routine",
+            ingredients: ["Salicylic Acid", "Niacinamide", "Tea Tree Oil"],
+            products: [
+                { id: "cleanser_oily", title: "Minty Oil-Control Cleanser", desc: "Fresh mint extracts to keep your skin matte and happy.", why: "Matches your oily skin type by gently removing excess sebum.", img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400" },
+                { id: "moisturizer_oily", title: "Sky-Blue Water Gel", desc: "Weightless hydration that feels like a fresh breeze.", why: "Non-greasy formula perfect for your oily profile.", img: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&q=80&w=400" }
+            ],
+            tip: "Focus on barrier repair; over-cleansing can actually trigger more oil."
+        },
+        dry: {
+            title: "Peach Hydration Routine",
+            ingredients: ["Hyaluronic Acid", "Ceramides", "Glycerin"],
+            products: [
+                { id: "cleanser_dry", title: "Peach Hydration Wash", desc: "Creamy peach goodness to nourish and soften dry skin.", why: "Replenishes the moisture your dry skin craves.", img: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=400" },
+                { id: "moisturizer_dry", title: "Lavender Barrier Cream", desc: "Soothing lavender and ceramides to lock in moisture.", why: "Extra richness to protect your skin's natural barrier.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400" }
+            ],
+            tip: "Apply moisturizer on damp skin to lock in maximum hydration."
+        },
+        combination: {
+            title: "Balanced Zen Routine",
+            ingredients: ["Squalane", "Green Tea", "Rosehip Oil"],
+            products: [
+                { id: "cleanser_comb", title: "Gentle Zen Foaming Wash", desc: "Balanced cleansing for T-zone and dry cheeks.", why: "Cleanses without stripping delicate areas.", img: "https://images.unsplash.com/photo-1556228515-91953bc029bb?auto=format&fit=crop&q=80&w=400" },
+                { id: "moisturizer_comb", title: "Dual-Action Cloud Cream", desc: "Hydrates dry spots while keeping oil at bay.", why: "Adapts to your skin's varied needs.", img: "https://images.unsplash.com/photo-1594465919760-441fe5908ab0?auto=format&fit=crop&q=80&w=400" }
+            ],
+            tip: "Multi-mask: use clay on your T-zone and hydration on cheeks."
+        },
+        sensitive: {
+            title: "Calming Petal Routine",
+            ingredients: ["Centella Asiatica", "Oatmeal", "Aloe Vera"],
+            products: [
+                { id: "cleanser_sens", title: "Oat-So-Gentle Milk Wash", desc: "Ultra-mild formula to soothe redness and irritation.", why: "Zero fragrance and pH-balanced for sensitivity.", img: "https://images.unsplash.com/photo-1556228515-91953bc029bb?auto=format&fit=crop&q=80&w=400" },
+                { id: "moisturizer_sens", title: "Cica-Rescue Soothing Balm", desc: "Heals even the most irritated skin barriers.", why: "Proven to reduce redness and calm flares.", img: "https://images.unsplash.com/photo-1556227702-d1e4e7ca562a?auto=format&fit=crop&q=80&w=400" }
+            ],
+            tip: "Patch test every new product on your inner wrist first."
+        },
+        normal: {
+            title: "Vitality Glow Routine",
+            ingredients: ["Vitamin C", "Peptides", "Antioxidants"],
+            products: [
+                { id: "cleanser_norm", title: "Brightening Citrus Wash", desc: "Fresh start for naturally balanced skin.", why: "Maintains your perfect natural balance.", img: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=400" },
+                { id: "moisturizer_norm", title: "Daily Radiance Fluid", desc: "Lightweight protection and a healthy glow.", why: "Keeps your skin looking its absolute best.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400" }
+            ],
+            tip: "Focus on preventative care like daily SPF to maintain your glow."
+        },
+        acne_extra: { id: "acne_serum", title: "Clear Sky Blemish Spot Treat", desc: "Targeted care with zinc and tea tree for clear skin.", why: "Because you mentioned acne as a primary concern.", img: "https://images.unsplash.com/photo-1556228515-91953bc029bb?auto=format&fit=crop&q=80&w=400" },
+        dullness_extra: { id: "dull_bright", title: "Glow-Boost Vitamin C", desc: "Instantly revives tired, lackluster skin.", why: "Addresses your concern for brightness.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400" }
     },
     haircare: {
-        routine: [
-            { id: "shampoo_hairfall", title: "Root-Revive Mint Wash", desc: "Energizing mint and caffeine to wake up those follicles.", why: "Specifically chosen to help with your hair fall concerns.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400" },
-            { id: "shampoo_dandruff", title: "Cooling Lavender Scrub", desc: "Scalp relief that smells amazing and works wonders.", why: "Gentle exfoliation for your dandruff-prone scalp.", img: "https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&q=80&w=400" },
-            { id: "shampoo_dry", title: "Peach Glaze Conditioner", desc: "Silky finish for hair that's seen better days.", why: "Provides the hydration your dry hair needs.", img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a3ef?auto=format&fit=crop&q=80&w=400" }
-        ]
+        curly: {
+            title: "Defined Curls Routine",
+            advice: "Detangle only when wet with a wide-tooth comb or fingers.",
+            products: [
+                { id: "shampoo_curly", title: "Butter-Rich Curl Wash", desc: "Moisture-heavy cleansing for bouncy definition.", why: "Specific formula to hydrate your curly hair.", img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a3ef?auto=format&fit=crop&q=80&w=400" },
+                { id: "mask_curly", title: "Deep-Sea Moisture Mask", desc: "Intense repair for thirsty coils.", why: "Provides the heavy hydration curls need.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400" }
+            ]
+        },
+        straight: {
+            title: "Sleek & Smooth Routine",
+            advice: "Blow-dry with a cool shot to seal the cuticle for maximum shine.",
+            products: [
+                { id: "shampoo_straight", title: "Silk-Pro Straight Wash", desc: "Lightweight formula for a sleek, non-greasy finish.", why: "Maintains volume while ensuring smoothness.", img: "https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&q=80&w=400" }
+            ]
+        },
+        oily_scalp: {
+            title: "Balancing Scalp Care",
+            advice: "Focus shampoo only on the roots; let it rinse through the ends.",
+            products: [
+                { id: "shampoo_oily", title: "Clarifying Mint Scrub", desc: "Deep cleanses to remove build-up and excess oil.", why: "Keeps your oily scalp fresh and clean.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400" }
+            ]
+        },
+        dandruff_extra: { id: "shampoo_dandruff", title: "Cooling Lavender Scrub", desc: "Scalp relief that smells amazing and works wonders.", why: "Gentle exfoliation for your dandruff-prone scalp.", img: "https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&q=80&w=400" },
+        hairfall_extra: { id: "shampoo_hairfall", title: "Root-Revive Mint Wash", desc: "Energizing mint and caffeine to wake up those follicles.", why: "Specifically chosen to help with your hair fall concerns.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=400" },
+        dryness_extra: { id: "shampoo_dry_h", title: "Peach Glaze Conditioner", desc: "Silky finish for hair that's seen better days.", why: "Provides the hydration your dry hair needs.", img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a3ef?auto=format&fit=crop&q=80&w=400" }
     },
     style: {
-        outfits: [
-            { id: "pear_casual", title: "A-Line Meadow Dress", desc: "Flowy and fun, perfect for a sunny day out.", why: "Flatters your pear body shape by highlighting your waist.", img: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=400" },
-            { id: "athletic_structured", title: "Bold Blazer & Denim", desc: "Sharp and stylish for an effortless look.", why: "Structured shoulders complement your athletic frame perfectly.", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=400" },
-            { id: "streetwear_teen", title: "Urban Pastel Oversize", desc: "Comfort meets hype in the best way possible.", why: "Matches your youthfulness and streetwear style preference.", img: "https://images.unsplash.com/photo-1523381235212-d73f80385227?auto=format&fit=crop&q=80&w=400" }
-        ]
-    },
-    nightRoutine: {
-        calm: "Soothing Lavender Mask",
-        bold: "Retinol resurfacing",
-        natural: "Simple Squalane Oil",
-        mysterious: "Probiotic Night Mask",
-        energetic: "Vitamin C Brightening"
+        pear: {
+            title: "Balanced Silhouette",
+            tips: "Suggest A-line outfits and structured shoulders to balance proportions.",
+            outfits: [
+                { id: "pear_dress", title: "Floral A-Line Dress", desc: "High-waist design with a flowy skirt.", why: "Highlights your waist while skimming your lower body.", img: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=400" }
+            ]
+        },
+        athletic: {
+            title: "Structured Elegance",
+            tips: "Suggest structured and fitted styles to enhance your frame.",
+            outfits: [
+                { id: "athletic_suit", title: "Tailored Blazer Set", desc: "Sharp lines and a perfect fit.", why: "Complements your strong, athletic silhouette.", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=400" }
+            ]
+        },
+        hourglass: {
+            title: "Curvy Classic",
+            tips: "Focus on waist-defining pieces to celebrate balance.",
+            outfits: [
+                { id: "hourglass_wrap", title: "Belted Wrap Dress", desc: "Follows your natural curves beautifully.", why: "Showcases your balanced proportions.", img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400" }
+            ]
+        },
+        default: {
+            title: "Timeless Sophistication",
+            tips: "Focus on well-tailored basics that project confidence.",
+            outfits: [
+                { id: "default_style", title: "Modern Minimalist Set", desc: "Clean lines and premium textures.", why: "A versatile look that works for any occasion.", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=400" }
+            ]
+        }
     }
 };
 
@@ -452,6 +528,23 @@ function validateStep(n) {
         userSelections.skinType = skinType;
         userSelections.skinTone = skinTone;
         userSelections.undertone = undertone;
+    } else if (n === 4) { // Step 5: Hair Profile & Concerns
+        const hairType = document.getElementById('hairType')?.value;
+        const scalpType = document.getElementById('scalpType')?.value;
+        const thickness = document.getElementById('thickness')?.value;
+
+        if (!hairType || !scalpType || !thickness) {
+            showError(n, "Please complete all hair profile fields.");
+            return false;
+        }
+        userSelections.hairType = hairType;
+        userSelections.scalpType = scalpType;
+        userSelections.thickness = thickness;
+
+        if (userSelections.skinConcern.length === 0 || userSelections.hairConcern.length === 0) {
+            showError(n, "Please select at least one skin concern and one hair concern.");
+            return false;
+        }
     }
     return true;
 }
@@ -563,49 +656,45 @@ function getStyleIdentity(styles, bodyType, gender, age, favColor) {
 }
 
 function getSkincareIntelligence(type, concerns, tone, age) {
+    const base = recommendations.skincare[type] || recommendations.skincare.normal;
     const report = {
-        title: "🧴 Skincare Intelligence",
-        theme: `Your ${type} skin is a canvas that loves **hydration and targeted balance**.`,
-        morning: [],
-        night: [],
-        ingredients: [],
-        tip: ""
+        title: "🧴 Skincare Routine",
+        theme: base.title,
+        ingredients: [...base.ingredients],
+        products: [...base.products],
+        tip: base.tip
     };
 
     if (concerns.includes('acne')) {
-        report.ingredients = ["Salicylic Acid", "Niacinamide", "Zinc"];
-        report.tip = "Focus on barrier repair; over-cleansing can actually trigger more oil.";
-        report.morning.push({ title: "Gentle Foaming Cleanser", desc: "Balance pH without stripping.", img: "https://images.unsplash.com/photo-1556228515-91953bc029bb?auto=format&fit=crop&q=80&w=400", why: "Prevents bacterial growth while keeping moisture locked in." });
-    } else if (age === 'mature' || age === 'senior' || concerns.includes('fine_lines')) {
-        report.ingredients = ["Retinol", "Peptides", "Ceramides"];
-        report.tip = "Massage items upward to support lymphatic drainage and skin elasticity.";
-        report.night.push({ title: "Renewal Retinoid", desc: "Nightly cell turnover boost.", img: "https://images.unsplash.com/photo-1594465919760-441fe5908ab0?auto=format&fit=crop&q=80&w=400", why: "Diminishes fine lines and improves skip texture overnight." });
-    } else {
-        report.ingredients = ["Vitamin C", "Hyaluronic Acid"];
-        report.tip = "Consistency is key. 10 minutes of self-care daily transforms your skin.";
-        report.morning.push({ title: "Brightening Glow Serum", desc: "Anti-oxidant shield.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400", why: "Protects against urban pollution and brightens tone." });
+        report.products.push(recommendations.skincare.acne_extra);
+        if (!report.ingredients.includes("Salicylic Acid")) report.ingredients.push("Salicylic Acid");
+    }
+    if (concerns.includes('dullness')) {
+        report.products.push(recommendations.skincare.dullness_extra);
+        if (!report.ingredients.includes("Vitamin C")) report.ingredients.push("Vitamin C");
     }
 
     return report;
 }
 
-function getHaircareBlueprint(type, concerns, thickness) {
+function getHaircareBlueprint(type, concerns, scalpType) {
+    let base = recommendations.haircare[type] || recommendations.haircare.straight;
+    if (scalpType === 'oily') {
+        base = recommendations.haircare.oily_scalp;
+    }
+
     const report = {
-        title: "💇 Haircare Blueprint",
-        theme: `Your **${thickness} ${type} hair** thrives on meticulous care and minimal heat.`,
-        recommendations: [],
-        advice: ""
+        title: "💇 Haircare Routine",
+        theme: base.title,
+        products: [...base.products],
+        advice: base.advice
     };
 
-    if (concerns.includes('hairfall')) {
-        report.advice = "Avoid tight hairstyles and focus on scalp stimulation.";
-        report.recommendations.push({ title: "Stimulating Scalp Oil", desc: "Rosmary & Peppermint blend.", why: "Increases blood flow to follicles to support new growth.", img: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&q=80&w=400" });
-    } else if (concerns.includes('frizz') || concerns.includes('dryness')) {
-        report.advice = "Switch to a silk pillowcase to reduce mechanical friction.";
-        report.recommendations.push({ title: "Intense Moisture Mask", desc: "Shea butter base.", why: "Seals the cuticle to prevent moisture evaporation.", img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a3ef?auto=format&fit=crop&q=80&w=400" });
-    } else {
-        report.advice = "A cool water rinse at the end of your shower adds instant shine.";
-        report.recommendations.push({ title: "Weightless Volume Wash", desc: "Biotin infused.", why: "Provides lift without residue.", img: "https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&q=80&w=400" });
+    if (concerns.includes('dandruff')) {
+        report.products.push(recommendations.haircare.dandruff_extra);
+    }
+    if (concerns.includes('dryness')) {
+        report.products.push(recommendations.haircare.dryness_extra);
     }
 
     return report;
@@ -674,11 +763,12 @@ window.generateResults = () => {
         showLoading(() => {
             const { gender, age, bodyType, style, favoriteColor, skinType, skinTone, undertone, skinConcern, hairType, scalpType, thickness, hairConcern, overallConcerns } = userSelections;
 
-            const identityName = getStyleIdentity(style, bodyType, gender);
             const score = calculateGlowUpScore(userSelections);
             const skinRec = getSkincareIntelligence(skinType, skinConcern, skinTone, age);
-            const hairRec = getHaircareBlueprint(hairType, hairConcern, thickness);
-            const styleRec = getStyleLogic(style, bodyType, gender, age, favoriteColor); // Renamed from getStyleIdentity to avoid conflict
+            const hairRec = getHaircareBlueprint(hairType, hairConcern, scalpType);
+            const styleRec = getStyleLogic(style, bodyType, gender, age, favoriteColor);
+
+            const identityName = styleRec.title;
 
             const reportHTML = `
                 <div class="identity-report-header fade-in">
@@ -708,29 +798,49 @@ window.generateResults = () => {
                 </div>
 
                 <div class="report-section reveal-step visible" style="--d: 0.1s">
-                    <div class="section-badge">${styleRec.title}</div>
+                    <div class="section-badge">👗 Style Identity</div>
                     <p class="section-theme">${styleRec.theme}</p>
+                    <p style="margin-bottom: 1.5rem; font-style: italic;">✨ Tip: ${styleRec.tips}</p>
                     <div class="rec-grid">
                         ${styleRec.outfits.map(o => createPremiumCard(o)).join('')}
                     </div>
                 </div>
 
                 <div class="report-section reveal-step visible" style="--d: 0.3s">
-                    <div class="section-badge">${skinRec.title}</div>
+                    <div class="section-badge">🧴 Skincare Routine</div>
                     <p class="section-theme">${skinRec.theme}</p>
                     <div class="ingredients-cloud">
                         ${skinRec.ingredients.map(i => `<span class="ingredient-tag">${i}</span>`).join('')}
                     </div>
                     <div class="rec-grid">
-                        ${[...skinRec.morning, ...skinRec.night].map(s => createPremiumCard(s)).join('')}
+                        ${skinRec.products.map(s => createPremiumCard(s)).join('')}
                     </div>
+                    <p style="margin-top: 1rem; font-weight: 500;">💡 Pro Tip: ${skinRec.tip}</p>
                 </div>
 
                 <div class="report-section reveal-step visible" style="--d: 0.5s">
-                    <div class="section-badge">${hairRec.title}</div>
+                    <div class="section-badge">💇 Haircare Routine</div>
                     <p class="section-theme">${hairRec.theme}</p>
                     <div class="rec-grid">
-                        ${hairRec.recommendations.map(h => createPremiumCard(h)).join('')}
+                        ${hairRec.products.map(h => createPremiumCard(h)).join('')}
+                    </div>
+                    <p style="margin-top: 1rem; font-weight: 500;">💡 Advice: ${hairRec.advice}</p>
+                </div>
+
+                 <div class="report-section reveal-step visible" style="--d: 0.7s">
+                    <div class="section-badge">🎨 Color Palette</div>
+                    <div class="palette-container" style="display: flex; gap: 1rem; margin: 1.5rem 0; justify-content: center;">
+                        ${getColorPalette(skinTone, undertone, favoriteColor).map(c => `
+                            <div class="color-swatch" style="background: ${c}; width: 60px; height: 60px; border-radius: 50%; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"></div>
+                        `).join('')}
+                    </div>
+                    <p style="text-align: center; color: var(--text-muted);">These colors complement your ${undertone} undertone.</p>
+                </div>
+
+                <div class="report-section reveal-step visible" style="--d: 0.9s">
+                    <div class="section-badge">✨ Confidence Tip</div>
+                    <div class="glass-card" style="padding: 2rem; margin-top: 1rem; border-left: 5px solid var(--accent);">
+                        <p style="font-size: 1.2rem; font-family: 'Outfit'; line-height: 1.6;">"${getConfidenceTip(overallConcerns, age)}"</p>
                     </div>
                 </div>
             `;
@@ -751,30 +861,26 @@ window.generateResults = () => {
 
 // Update helper to avoid name collision
 function getStyleLogic(style, bodyType, gender, age, favoriteColor) {
-    // Existing style identity logic but renamed
-    const styles = {
-        minimalist: {
-            title: "Sophisticated Minimalist",
-            theme: "Clean lines and neutral tones with high-quality basics.",
-            outfits: [
-                { title: "Silk Shirt & Tailored Pants", desc: "Effortless elegance for any occasion.", why: "Matches your preference for clean, minimalist styles.", img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400" },
-                { title: "Monochrome Knit Set", desc: "Cozy yet refined for a modern look.", why: "Neutral colors complement your sophisticated vibe.", img: "https://images.unsplash.com/photo-1539109132304-39fa5a4ad92e?auto=format&fit=crop&q=80&w=400" }
-            ],
-            palette: ['#FFFFFF', '#E9ECEF', '#ADB5BD', '#212529']
-        },
-        streetwear: {
-            title: "Urban Trendsetter",
-            theme: "Bold graphics, oversized fits, and hype-driven accessories.",
-            outfits: [
-                { title: "Oversized Graphic Tee & Cargoes", desc: "The ultimate urban uniform.", why: "Fits your energetic and trendy personality perfectly.", img: "https://images.unsplash.com/photo-1523381235212-d73f80385227?auto=format&fit=crop&q=80&w=400" },
-                { title: "Techwear Hoodie & Joggers", desc: "Function meets futuristic style.", why: "Great for an active and bold streetwear look.", img: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=400" }
-            ],
-            palette: ['#000000', '#FFD93D', '#FF6B6B', '#4D4D4D']
-        }
+    const base = recommendations.style[bodyType] || recommendations.style.default;
+    const report = {
+        title: base.title,
+        theme: `Empowering your **${bodyType}** silhouette with **${style.join(' & ')}** aesthetics.`,
+        tips: base.tips,
+        outfits: [...base.outfits]
     };
-    const res = styles[style] || styles.minimalist;
-    res.palette = getColorPalette('medium', 'neutral', favoriteColor);
-    return res;
+
+    // Add style-specific outfit if available
+    if (style.includes('streetwear') && age === 'teen') {
+        report.outfits.push({
+            id: "streetwear_teen",
+            title: "Urban Pastel Oversize",
+            desc: "Comfort meets hype in the best way possible.",
+            why: "Matches your youthfulness and streetwear style preference.",
+            img: "https://images.unsplash.com/photo-1523381235212-d73f80385227?auto=format&fit=crop&q=80&w=400"
+        });
+    }
+
+    return report;
 }
 
 // --- HELPER FUNCTIONS ---
